@@ -1,0 +1,12 @@
+D:\File\GitHub\DataLib\DataLib\bin\Debug\net5.0\DataLib.deps.json
+D:\File\GitHub\DataLib\DataLib\bin\Debug\net5.0\DataLib.dll
+D:\File\GitHub\DataLib\DataLib\bin\Debug\net5.0\ref\DataLib.dll
+D:\File\GitHub\DataLib\DataLib\bin\Debug\net5.0\DataLib.pdb
+D:\File\GitHub\DataLib\DataLib\obj\Debug\net5.0\DataLib.csproj.AssemblyReference.cache
+D:\File\GitHub\DataLib\DataLib\obj\Debug\net5.0\DataLib.GeneratedMSBuildEditorConfig.editorconfig
+D:\File\GitHub\DataLib\DataLib\obj\Debug\net5.0\DataLib.AssemblyInfoInputs.cache
+D:\File\GitHub\DataLib\DataLib\obj\Debug\net5.0\DataLib.AssemblyInfo.cs
+D:\File\GitHub\DataLib\DataLib\obj\Debug\net5.0\DataLib.csproj.CoreCompileInputs.cache
+D:\File\GitHub\DataLib\DataLib\obj\Debug\net5.0\DataLib.dll
+D:\File\GitHub\DataLib\DataLib\obj\Debug\net5.0\ref\DataLib.dll
+D:\File\GitHub\DataLib\DataLib\obj\Debug\net5.0\DataLib.pdb
