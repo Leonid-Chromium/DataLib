@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 using System.Data;
 using System.Diagnostics;
+using System.Windows;
 
 namespace DataLib
 {
-    class DataClass
+    public class DataClass
     {
         public static int DTtoTrace(DataTable dataTable)
         {
@@ -43,8 +44,8 @@ namespace DataLib
             }
         }
 
-        ////TODO Избавься от следующих двух методов заменив их чем то адекватным
-        //public static object[] MyGetArray(DataGrid dataGrid)
+        //TODO Избавься от следующих двух методов заменив их чем то адекватным
+        //public static object[] MyGetArray( DataGrid dataGrid)
         //{
         //    try
         //    {
