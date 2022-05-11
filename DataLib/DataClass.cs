@@ -103,7 +103,7 @@ namespace DataLib
 		}
 
         /// <summary>
-        /// Выводи содежание таблицы в виде строки
+        /// Выводит содежание таблицы в виде строки
         /// </summary>
         /// <param name="dataTable"></param>
         /// <returns></returns>
@@ -121,7 +121,7 @@ namespace DataLib
                         str = str + String.Format("{0,3}", dataTable.Rows[i].ItemArray[j].ToString());
                         str = str + "|";
                     }
-                    MultiString(ref outString, "");
+                    MultiString(ref outString, str);
                 }
                 return outString;
             }
