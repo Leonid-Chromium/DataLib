@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Diagnostics;
 using System.Windows;
+using System.Windows.Media;
 
 namespace DataLib
 {
@@ -169,6 +170,18 @@ namespace DataLib
             string resultStr = String.Join(", ", valueСollection);
             Trace.WriteLine(resultStr);
             return resultStr;
+        }
+
+        /// <summary>
+        /// Возвращает Brash цвет которого совпадает со входной строкой
+        /// </summary>
+        /// <param name="colorString">Не забудь использовать #</param>
+        /// <returns></returns>
+        public static Brush ColorStringConverter(string colorString)
+		{
+            BrushConverter brushConverter = new BrushConverter();
+            Brush brush = (Brush)brushConverter.ConvertFromString(colorString);
+            return brush;
         }
     }
 }
