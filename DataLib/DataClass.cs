@@ -12,6 +12,18 @@ namespace DataLib
 {
     public class DataClass
     {
+        public static void MultiString(ref string baseStr, string appendStr)
+		{
+            baseStr =  baseStr + "\n" + appendStr;
+		}
+
+        /*
+        /// <summary>
+        /// Выводит информацию о табдицы в Trace
+        /// Старая версия
+        /// </summary>
+        /// <param name="dataTable"></param>
+        /// <returns></returns>
         public static int DTtoTrace(DataTable dataTable)
         {
             try
@@ -41,6 +53,81 @@ namespace DataLib
             catch
             {
                 return 1;
+            }
+        }
+        */
+
+        /// <summary>
+        /// Выводит информацию о табдицы в Trace
+        /// </summary>
+        /// <param name="dataTable"></param>
+        /// <returns></returns>
+        public static int DTtoTrace(DataTable dataTable)
+        {
+            try
+            {
+                Trace.WriteLine(DTInfo(dataTable));
+                Trace.WriteLine(DTData(dataTable));
+                return 0;
+            }
+            catch
+            {
+                return 1;
+            }
+        }
+
+        /// <summary>
+        /// Выводит информацию о таблице в виде строки
+        /// </summary>
+        /// <param name="dataTable"></param>
+        /// <returns></returns>
+        public static string DTInfo(DataTable dataTable)
+		{
+            try
+			{
+                string outString = "";
+                MultiString(ref outString, "Общая информация");
+                MultiString(ref outString, String.Format("Columns count = " + dataTable.Columns.Count));
+                MultiString(ref outString, String.Format("Rows count = " + dataTable.Rows.Count));
+
+                for (int i = 0; i < dataTable.Columns.Count; i++)
+                {
+                    MultiString(ref outString, String.Format(dataTable.Columns[i].ColumnName + " " + dataTable.Columns[i].DataType));
+                }
+                return outString;
+			}
+            catch(Exception ex)
+			{
+                return ex.Message;
+			}
+		}
+
+        /// <summary>
+        /// Выводи содежание таблицы в виде строки
+        /// </summary>
+        /// <param name="dataTable"></param>
+        /// <returns></returns>
+        public static string DTData(DataTable dataTable)
+        {
+            try
+            {
+                string outString = "";
+                MultiString(ref outString, "Таблица с данными");
+                for (int i = 0; i < dataTable.Rows.Count; i++)
+                {
+                    string str = "|";
+                    for (int j = 0; j < dataTable.Columns.Count; j++)
+                    {
+                        str = str + String.Format("{0,3}", dataTable.Rows[i].ItemArray[j].ToString());
+                        str = str + "|";
+                    }
+                    MultiString(ref outString, "");
+                }
+                return outString;
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
             }
         }
 
@@ -73,7 +160,8 @@ namespace DataLib
         //    }
         //}
 
-        public static string ArrayToValue(string[] valueName, string[] value) // Используется для формирования строки-перечисления пар ([название столбца] = [значение]). Идеально подходит для Insert запроса в SQL 
+        /// <summary>Используется для формирования строки-перечисления пар ([название столбца] = [значение]). Идеально подходит для Insert запроса в SQL </summary>
+        public static string ArrayToValue(string[] valueName, string[] value)
         {
             List<string> valueСollection = new List<string>();
             for (int i = 0; i < valueName.Length; i++)
